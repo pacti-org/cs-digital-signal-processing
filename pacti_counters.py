@@ -1,5 +1,5 @@
 from functools import wraps
-from typing import Dict, List, Tuple
+from typing import List, Optional
 from pacti.terms.polyhedra import PolyhedralContract
 
 import sys
@@ -183,12 +183,12 @@ class PolyhedralContractCountStats:
     def stats(self) -> str:
         return (
             "Pacti compose,quotient,merge statistics:\n"
-            + f"min: (compose: {self.min_compose}, quotient: {self.min_quotient}, merge: {self.min_merge})\n"
-            + f"max: (compose: {self.max_compose}, quotient: {self.max_quotient}, merge: {self.max_merge})\n"
-            + f"avg: (compose: {self.avg_compose}, quotient: {self.avg_quotient}, merge: {self.avg_merge})\n"
-            + f"min/max compose size: {self.compose_min_size}/{self.compose_max_size}\n"
-            + f"min/max quotient size: {self.quotient_min_size}/{self.quotient_max_size}\n"
-            + f"min/max merge size: {self.merge_min_size}/{self.merge_max_size}\n"
+            + f"min invocation counts: (compose: {self.min_compose}, quotient: {self.min_quotient}, merge: {self.min_merge})\n"
+            + f"max invocation counts: (compose: {self.max_compose}, quotient: {self.max_quotient}, merge: {self.max_merge})\n"
+            + f"avg invocation counts: (compose: {self.avg_compose}, quotient: {self.avg_quotient}, merge: {self.avg_merge})\n"
+            + f"min/max compose contract size  : {self.compose_min_size}/{self.compose_max_size}\n"
+            + f"min/max quotient contract size : {self.quotient_min_size}/{self.quotient_max_size}\n"
+            + f"min/max merge contract size    : {self.merge_min_size}/{self.merge_max_size}\n"
         )
 
 
